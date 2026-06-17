@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { ItineraryPlan } from '../types';
-import { translations } from '../lib/translations';
+import { ItineraryPlan } from '../../../types';
+import { translations } from '../../../lib/translations';
 import { 
   Bookmark, 
   Trash2, 
@@ -13,7 +13,7 @@ import {
   Compass,
   Star
 } from 'lucide-react';
-import { db, deleteFavoriteItinerary, isFirebaseEnabled, updateFavoriteItineraryRating } from '../lib/firebase';
+import { db, deleteFavoriteItinerary, isFirebaseEnabled, updateFavoriteItineraryRating } from '../../../lib/firebase';
 import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
 import { motion, AnimatePresence } from 'motion/react';
 

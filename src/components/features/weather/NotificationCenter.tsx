@@ -1,6 +1,6 @@
 import React from 'react';
-import { WeatherAlert } from '../types';
-import { translations } from '../lib/translations';
+import { WeatherAlert } from '../../../types';
+import { translations } from '../../../lib/translations';
 import { Bell, BellOff, X, HelpCircle, AlertTriangle, CloudRain, Sun, Info } from 'lucide-react';
 
 interface NotificationCenterProps {

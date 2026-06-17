@@ -1,7 +1,7 @@
 import React from 'react';
-import { WeatherData } from '../types';
-import { translations } from '../lib/translations';
-import { getWeatherDesc, getWeatherIcon, getUVText } from '../lib/weatherUtils';
+import { WeatherData } from '../../../types';
+import { translations } from '../../../lib/translations';
+import { getWeatherDesc, getWeatherIcon, getUVText } from '../../../lib/weatherUtils';
 import { Wind, Droplet, RefreshCw, Clock, Calendar, ShieldAlert } from 'lucide-react';
 
 interface WeatherCardProps {

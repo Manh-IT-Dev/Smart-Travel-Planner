@@ -1,6 +1,6 @@
 import React from 'react';
-import { ItineraryPlan } from '../types';
-import { translations } from '../lib/translations';
+import { ItineraryPlan } from '../../../types';
+import { translations } from '../../../lib/translations';
 import { MapPin, Info, ArrowRight, ExternalLink, Sparkles, Navigation, Bookmark } from 'lucide-react';
 
 interface ItineraryPanelProps {

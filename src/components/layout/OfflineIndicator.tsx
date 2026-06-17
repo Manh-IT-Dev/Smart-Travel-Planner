@@ -1,6 +1,6 @@
 import React from 'react';
 import { Wifi, WifiOff } from 'lucide-react';
-import { translations } from '../lib/translations';
+import { translations } from '../../lib/translations';
 
 interface OfflineIndicatorProps {
   isOffline: boolean;

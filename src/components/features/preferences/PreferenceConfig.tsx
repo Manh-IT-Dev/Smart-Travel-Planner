@@ -1,6 +1,6 @@
 import React from 'react';
-import { UserPreferences } from '../types';
-import { translations } from '../lib/translations';
+import { UserPreferences } from '../../../types';
+import { translations } from '../../../lib/translations';
 import { Settings, Check, Globe, Moon, Sun, Heart, Navigation, Thermometer, ShieldAlert } from 'lucide-react';
 
 interface PreferenceConfigProps {
