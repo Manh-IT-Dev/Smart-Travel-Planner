@@ -105,7 +105,7 @@ export default function RedisDashboard({ lang, refreshTrigger, theme = 'dark' }:
             <p className={`text-[9px] uppercase tracking-wider font-bold ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
               {lang === 'vi' ? 'DỊCH VỤ CLOUD' : 'CLOUD ENDPOINT'}
             </p>
-            <p className={`text-xs font-mono font-bold truncate leading-none ${isDark ? 'text-slate-200' : 'text-slate-705'}`}>
+            <p className={`text-xs font-mono font-bold truncate leading-none ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
               GCP Memorystore (Redis)
             </p>
           </div>
@@ -128,7 +128,7 @@ export default function RedisDashboard({ lang, refreshTrigger, theme = 'dark' }:
         <div className={`p-2.5 rounded-xl space-y-1 border ${
           isDark ? 'bg-slate-950/20 border-slate-800/45' : 'bg-slate-50 border-slate-100 shadow-sm'
         }`}>
-          <span className={`text-[9px] block uppercase font-bold tracking-wider ${isDark ? 'text-slate-550' : 'text-slate-400'}`}>
+          <span className={`text-[9px] block uppercase font-bold tracking-wider ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
             {lang === 'vi' ? 'Hit Rate (Hiệu suất)' : 'Hit Efficiency'}
           </span>
           <div className="flex items-baseline gap-1.5">
@@ -142,9 +142,9 @@ export default function RedisDashboard({ lang, refreshTrigger, theme = 'dark' }:
         </div>
 
         <div className={`p-2.5 rounded-xl space-y-1 border ${
-          isDark ? 'bg-slate-950/20 border-slate-800/45' : 'bg-slate-50 border-slate-105 shadow-sm'
+          isDark ? 'bg-slate-950/20 border-slate-800/45' : 'bg-slate-50 border-slate-100 shadow-sm'
         }`}>
-          <span className={`text-[9px] block uppercase font-bold tracking-wider ${isDark ? 'text-slate-550' : 'text-slate-400'}`}>
+          <span className={`text-[9px] block uppercase font-bold tracking-wider ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
             {lang === 'vi' ? 'Dung lượng cache' : 'Memory Occupied'}
           </span>
           <div className="flex items-baseline gap-1.5">
@@ -185,10 +185,10 @@ export default function RedisDashboard({ lang, refreshTrigger, theme = 'dark' }:
               return (
                 <div key={i} className={`flex items-center justify-between p-1.5 rounded-lg border gap-2 transition-all ${
                   isDark 
-                    ? 'bg-slate-950/40 border-slate-850/50 hover:border-slate-850' 
-                    : 'bg-white border-slate-150 hover:border-slate-300 shadow-sm'
+                    ? 'bg-slate-950/40 border-slate-800/50 hover:border-slate-800'
+                    : 'bg-white border-slate-100 hover:border-slate-200 shadow-sm'
                 }`}>
-                  <span className={`truncate flex-1 font-bold ${isDark ? 'text-slate-400' : 'text-slate-655'}`} title={k.key}>
+                  <span className={`truncate flex-1 font-bold ${isDark ? 'text-slate-400' : 'text-slate-600'}`} title={k.key}>
                     🔑 {label}
                   </span>
                   <div className="flex items-center gap-1.5 shrink-0 text-[8px]">

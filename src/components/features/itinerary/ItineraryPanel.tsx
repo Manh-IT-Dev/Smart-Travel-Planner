@@ -78,7 +78,7 @@ export default function ItineraryPanel({
           >
             {loading ? (
               <span className="flex items-center space-x-2">
-                <span className="animate-ping w-2 h-2 rounded-full bg-slate-950"></span>
+                <span className="animate-ping w-2 h-2 rounded-full bg-black"></span>
                 <span>{t.generating}</span>
               </span>
             ) : (
@@ -235,7 +235,7 @@ export default function ItineraryPanel({
                   </div>
 
                   {/* Location label */}
-                  <div className={`flex items-center space-x-1 text-xs font-semibold ${isDark ? 'text-slate-300' : 'text-slate-700_custom text-slate-705'}`}>
+                  <div className={`flex items-center space-x-1 text-xs font-semibold ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
                     <MapPin className="w-3.5 h-3.5 text-rose-500 shrink-0" />
                     <span className="truncate">{item.location}</span>
                   </div>
