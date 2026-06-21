@@ -212,5 +212,3 @@ jobs:
 ```
 
 Chúc bạn bảo vệ đồ án thành công rực rỡ với điểm số tuyệt đối!
-
-Demo
