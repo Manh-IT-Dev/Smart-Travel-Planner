@@ -1,0 +1,47 @@
+name: Continuous Deployment to Cloud Run
+
+on:
+  push:
+    branches:
+      - main
+
+# QUAN TRỌNG: Cần cấp quyền ghi token OIDC để GitHub Actions có thể xin mã xác thực ngắn hạn từ GCP
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Xác thực bằng Workload Identity Federation (Không cần file JSON key)
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: "projects/[PROJECT_NUMBER]/locations/global/workloadIdentityPools/github-pool/providers/github-provider"
+          service_account: "github-deployer@${{ secrets.GCP_PROJECT_ID }}.iam.gserviceaccount.com"
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Configure Docker for Artifact Registry
+        run: gcloud auth configure-docker asia-east1-docker.pkg.dev
+
+      - name: Build and Push Docker Image
+        run: |
+          docker build -t asia-east1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/weather-app-repo/weather-app:${{ github.sha }} .
+          docker push asia-east1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/weather-app-repo/weather-app:${{ github.sha }}
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy weather-ai-service \
+            --image=asia-east1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/weather-app-repo/weather-app:${{ github.sha }} \
+            --region=asia-east1 \
+            --platform=managed \
+            --allow-unauthenticated \
+            --port=3000 \
+            --set-env-vars=GEMINI_API_KEY="${{ secrets.GEMINI_API_KEY }}"
