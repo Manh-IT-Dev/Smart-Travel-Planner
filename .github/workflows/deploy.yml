@@ -48,4 +48,6 @@ jobs:
             --platform=managed \
             --allow-unauthenticated \
             --port=3000 \
+            --clear-network \
+            --clear-vpc-connector \
             --set-env-vars=GEMINI_API_KEY="${{ secrets.GEMINI_API_KEY }}"
